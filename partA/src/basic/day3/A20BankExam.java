@@ -54,6 +54,7 @@ public class A20BankExam {
                     break;
             }//switch end
        }
+       System.out.println("오늘은 그만하고 싶어요..");
        
        
        
