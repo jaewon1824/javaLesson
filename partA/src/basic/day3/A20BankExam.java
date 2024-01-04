@@ -13,7 +13,7 @@ public class A20BankExam {
        Scanner sc = new Scanner(System.in);
        
        
-        //세자리마다 컴마 찍기 : 아직배운 진도가 아니지만 일단은 사용하기
+        //세자리마다 컴마 찍기 : 아직배운 진도가 아니지만 일단은 사용하기1
         DecimalFormat df = new DecimalFormat("#,###");
        
 
