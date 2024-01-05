@@ -51,6 +51,8 @@ public class A11StringMethod {
         char ch = message.charAt(5);
         // 2) 문자열 리턴값으로 또 메소드 실행할 수 있음
        System.out.println(message.toUpperCase().substring(0,4));
+     
+
 
 
         //리턴값 형식을 기준으로 정리하기
@@ -58,6 +60,10 @@ public class A11StringMethod {
         //  String  : substring, toUpperCase, toLowerCase, replace, concat
         //  int  : length, indexOf, lastIndexOf
         //  char : charAt
-    
-}
+        // 24-01-02 복습
+        // * 입력 -> 처리 -> 출력의 과정을 항상 생각하자.
+        // * 문자열 메소드에도 입력,출력을 생각해 볼 수 있습니다. 입력은 메소드의 인자, 출력은 메소드의 리턴
+        // 단, aessage.charAt(1) 를 예시로 하면 message는 메소드의 실행 주체.
+        // 그리고, 리턴이 없는 메소드가 있을 수 있으며 그 때느 void로 표현됩니다.
+    }      
 }

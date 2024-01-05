@@ -20,6 +20,10 @@
 
       $ git config --global user.email "이메일"
 
+* git 사용자 이름 설정
+
+       & git config --global user.name "이름"
+       
 * git 사용자 이메일 확인
 
       $ git config user.email
