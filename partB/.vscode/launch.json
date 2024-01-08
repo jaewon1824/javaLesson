@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "B10DiamondTest",
+            "request": "launch",
+            "mainClass": "day7.B10DiamondTest",
+            "projectName": "partB_79ef668a"
+        },
+        {
+            "type": "java",
             "name": "cart",
             "request": "launch",
             "mainClass": "day6.cart",

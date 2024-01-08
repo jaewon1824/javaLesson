@@ -11,7 +11,7 @@ public class musicalMain {
         musical musical = new musical("뮤지컬",new int[4],"블루스퀘어",new String[4]);
         musical movie = new musical("영화",new int[4],"메가박스",new String[4] );
         musical opera = new musical("오페라",new int[4],"세종문화회관",new String[4] );
-        musical concert = new musical("콘서트",new int[4],"샤롯데시어터",new String[4]);
+        musical concert = new musical("콘서트",new int[4],"월드컵경기장",new String[4]);
 
         
         String[] temp = play.getSeat();
