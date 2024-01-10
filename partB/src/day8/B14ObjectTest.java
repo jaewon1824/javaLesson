@@ -5,6 +5,7 @@ import day7.Diamond;
 import day7.Shape;
 import day7.Triangle;
 
+
 /* 
  * 모든 자바 클래스의 부모는 Object 타입.
  * 

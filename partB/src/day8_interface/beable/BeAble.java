@@ -1,7 +1,8 @@
 package day8_interface.beable;
 
+@FunctionalInterface		// 추상메소드가 1개인지 체크해주는 주석
 public interface BeAble {			//~~ 할 수 있는
-	String beAble(); 
+	String beAble(); 		// 1개이므로 오류가 아님
 }
 
 /**

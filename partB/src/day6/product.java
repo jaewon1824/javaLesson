@@ -41,9 +41,9 @@ public class product {
         return etc;
     }
 
-    //모ㅓ든 필드값을 이용해서 문자열을 만들어 리턴합니다.
+    //모든 필드값을 이용해서 문자열을 만들어 리턴합니다.
     public String getDate() {
-        return String.format("%s\t %d\t %s\t %s",productName,price,company,Arrays.toString(etc));
+        return String.format("%s\t %d\t %s\t %d",productName,price,company,Arrays.toString(etc));
                             //자리크기 지정한 것에 대해 정렬은 %s 문자열은 가운데 -를 붙이면 왼쪽
                             //%d 정수는 오른쪽
     }
