@@ -49,7 +49,7 @@ public JavaWordBook() {
         System.out.println("~".repeat(20)+"~ 단어장 ~ ".repeat(20));
         System.out.println(String.format("%-15s %-15s\t %s", "<english>,", "<korea>", "<level>"));
         for(JavaWord word : list) {
-            System.out.println(String.format("%-15s %-15s\t %d", word.getEnglish(),word.getKorea(),word.getLevel()));
+            System.out.println(String.format("%-15s %-15s\t %d", word.getEnglish(),word.getKorean(),word.getLevel()));
         
     }
     }
