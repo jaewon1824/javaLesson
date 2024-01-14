@@ -173,11 +173,14 @@ import java.util.List;
         if(System.console().readLine().equals(name))
                         continue;
                 else {
-                custom.modify(group, phone); 
+                ((Customer) custom).modify(phone, group); 
                 System.out.println("고객님의 정보가 변경되었습니다."); }
         
             }
+        
         }
+
+        
         
 
             
