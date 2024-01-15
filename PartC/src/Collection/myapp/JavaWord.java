@@ -1,7 +1,11 @@
 package Collection.myapp;
 
+
+
 // 자바프로그램에서 사용되는 영어단어 데이터 저장할 클래스
 public class JavaWord {
+    //추상메소드 정의
+   
     private String english;
     private String korean;
     private int level;          // 0 : 초급 , 1 : 중급 , 2 : 고급

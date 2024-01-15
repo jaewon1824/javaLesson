@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class JavaWordApp {
     public static void main(String[] args) {
-        
+        // JavaWord 는 단어객체, JavaWordBook은 단어장 객체
         //단어장을 시작하는 프로그램입니다.
         
         //1. 단어장을 생성

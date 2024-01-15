@@ -3,7 +3,7 @@ package myappX;
 import java.util.ArrayList;
 import java.util.List;
 
-import collection.myapp.JavaWord;
+import Collection.myapp.JavaWord;
 
 /**
  * JavaWordApp_V2 : 메소드 만드는 연습
@@ -153,7 +153,7 @@ public class JavaWordApp_V2X {
         //프로그램 실행하는 객체 생성하고 
         //          (메소드로 기능을 분리할 때 main이 호출하는 static 을 없애기 위함.)
         //         start 메소드 프로그램 실행 내용을 코딩
-        JavaWordApp_V2 app = new JavaWordApp_V2();
+        JavaWordApp_V2X app = new JavaWordApp_V2X();
         app.start();
     }
 

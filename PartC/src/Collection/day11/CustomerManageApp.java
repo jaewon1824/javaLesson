@@ -168,15 +168,17 @@ import java.util.List;
         String phone = System.console().readLine();
         System.out.println("변경하실 고객님의 등급을 입력해주세요. (1:일반 2:vip 3:기타) _");
         int group = Integer.parseInt(System.console().readLine());
+        
+        
        
-        for( Customer modify : custom ){
-        if(System.console().readLine().equals(name))
-                        continue;
-                else {
-                ((Customer) custom).modify(phone, group); 
-                System.out.println("고객님의 정보가 변경되었습니다."); }
+        for(Customer modify : custom){
+        if(modify.getName().equals(System.console().readLine()))
+                
+               custom.set(phone, group); 
+                System.out.println("고객님의 정보가 변경되었습니다."); 
         
             }
+        
         
         }
 

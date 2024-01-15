@@ -11,8 +11,10 @@ public class JavaWordBook {
     //굳이 List 대신 Map을 사용한 이유 : 조회와 삭제를 편하게 하려고
     //조회 이외에는 특히 출력에는 map.values()로 value값만 사용.
     private Map<String,JavaWord> wordBook;
-    //key : 영어단어
+    //key : 영어단어, key값은 중복이 안되고 순서가 없습니다.
     //value : JavaWord (영어,한글,레벨)
+
+    //getter        //Map 객체 리턴
     public Map<String, JavaWord> getWordBook() {
         return this.wordBook;
     }
@@ -27,12 +29,13 @@ public JavaWordBook() {
         this.wordBook.put(word.getEnglish(), word);
     }
 
-    //단어조회
+    //Map의 특징 - key값을 이용해서 조회와 삭제할 수 있습니다.
+    //단어조회 - (비교) 리스트에서는 for 반복으로 찾기
     public JavaWord searchWord(String english) {
         return this.wordBook.get(english);
     }
 
-    //단어삭제
+    //단어삭제 - (비교) 리스트에서는 for 반복으로 찾기. 인덱스로 삭제.
     public void removeWord(String english){
         this.wordBook.remove(english);
         
