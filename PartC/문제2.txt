@@ -1,0 +1,11 @@
+출제자 : 정재원
+
+-- 2023년에 팔린 상품의 이름과 코드,총 판매액 그리고 총 판매개수를 구하시오.
+
+SELECT total.PCODE,PNAME, SUM(QUANTITY) "총 구매개수", SUM("총 가격")
+FROM (
+    SELECT tp.PCODE,PNAME, QUANTITY, QUANTITY * PRICE "총 가격", BUY_DATE  
+    FROM TBL_PRODUCT tp, TBL_BUY tb 
+    WHERE tp.PCODE = tb.PCODE AND to_char(BUY_DATE, 'yyyy') = '2023'
+) total
+GROUP BY total.PCODE, PNAME;

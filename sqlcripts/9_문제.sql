@@ -22,7 +22,7 @@
   	name nvarchar2(5) NOT NULL,
   	email varchar2(30) NOT NULL UNIQUE,
   	age number(2) NOT NULL,
-  	nDate varchar2(20) NOT NULL
+  	nDate Date NOT NULL
   );
  
  
@@ -38,7 +38,7 @@ CREATE TABLE exbuy(
 	exno char(10),
 	code char(10),
 	quna number(10) NOT NULL,
-	bDate nvarchar2(30) NOT NULL,
+	bDate Date DEFAULT sysdate,
 	FOREIGN key(exno)
 	REFERENCES EXCUSTOMER(exno),
 	FOREIGN key(code)
@@ -69,6 +69,27 @@ SELECT * FROM EXCUSTOMER ;
 SELECT * FROM EXPRODUCT ;
 SELECT * FROM EXBUY ;
 
+
+--구매 테이블에 기본키 만들기
+
+-- 0) 기본키가 필요한 이유 : 행 식별
+
+-- 1) 기본키에 들어갈 값은 시퀀스로 만듭니다. exbuy_pkseq 시작값은 1001로 합시다.
+CREATE SEQUENCE exbuy_pkseq START WITH 1001;
+
+-- 2) 기본키 컬럼명을 buy_idx로 하여 컬럼추가. number(8)
+ALTER TABLE EXBUY ADD buy_idx NUMBER (8) ;
+
+-- 3) 기본 행에 적용할 buy_idx 컬럼값을 저장하기. not null과 unique 적용하여 설정하기
+--	디비버의 메뉴에서
+
+
+-- 4) buy_idx 컬럼에 대해 primary key 설정하기
+ALTER TABLE EXBUY ADD CONSTRAINT exbuy_pk PRIMARY KEY (buy_idx);
+
+-- 5) 이제부터 새로운 행을 추가할 때에는 시퀀스 함수로 pk 값을 insert 합니다.
+INSERT INTO EXBUY (buy_idx,exno,code,quna) VALUES (exbuy_pkseq.nextval,'mina012' , 'CJBAb12g' , 5);
+SELECT *FROM EXBUY ;
 
 --출제자 조이루
 --문제 :  각회원들이 구매한 상품의 합계를 구하시오.

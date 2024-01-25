@@ -44,12 +44,37 @@ SELECT SUBJECT ,count(*) FROM TBL_SCORE GROUP BY SUBJECT ;
 -- GROUP BY SUBJECT 구문이 있으므로 조회 컬럼에 STUNO 추가할 수 있습니다.		서로 다르면 X
 SELECT STUNO  ,count(*) FROM TBL_SCORE GROUP BY STUNO  ;
 
+/*
+ * 집계함수 count, avg , sum, min, max 등 그룹 함수라고도 합니다. 
+ * 그룹화 - 지정한 컬럼값이 같을 것을 갖는 행에 대해 집계 함수를 실행합니다.
+ *       
+ * select 
+ *       그룹화컬럼, 그룹함수
+ * from 테이블이름
+ * [WHERE] 그룹화하기 이전의 조건식
+ * GROUP BY 그룹화에 사용할 컬럼명
+ * [HAVING] 그룹화 후에 그룹화 결과값을 사용하는 조건식
+ * [ORDER BY] 정렬 컬럼
+ */
+
 -- GROUP BY는 그룹화 컬럼명1, 그룹화 컬럼명2,,,,로 할 수 있습니다.
 
+-- 예시 1. 학번별로 수강한 갯수와 평균을 조회 해보세요.
+SELECT STUNO, count(*),avg(JUMSU) FROM TBL_SCORE GROUP BY STUNO ;
 
 
+-- 예시 2. 위의 결과에 대해 평균이 80점 미만인 학번을 조회해 보세요.
+SELECT STUNO, count(*),avg(JUMSU) FROM TBL_SCORE GROUP BY STUNO HAVING AVG(JUMSU) < 80;
+-- having은 집계함수 결과에 대한 조건식입니다. 
+-- 예시 3. 점수가 80점 이상 데이터만 예시1번을 실행하도록 한다면 where jumsu >=80 group by stuno
+SELECT STUNO, count(*),avg(JUMSU) FROM TBL_SCORE WHERE JUMSU  >= 80 GROUP BY STUNO ;
 
+-- 예시 4. 예시1번의 결과를 평균 내림차순으로 조회
+SELECT STUNO, count(*),avg(JUMSU)"학생별 평균" FROM TBL_SCORE GROUP BY STUNO ORDER BY "학생별 평균" DESC ;
 
+-- 예시 5. 학기-교사별 count, avg 조회하기
+SELECT TERM ,TEACHER ,count(*),avg(JUMSU) FROM TBL_SCORE GROUP BY TERM ,TEACHER ;		--먼저 학기별로 그룹하고 2차로 학기가 같은 결과 안에서 선생님별로 그룹화
+-- 제대로 된 결과를 보려면 데이터가 좀 많아야 합니다.
 
 
 

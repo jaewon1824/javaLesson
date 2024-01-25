@@ -12,6 +12,7 @@ public class B10DiamondTest {
         diamond.print();
 
         //여기까지 확인하면 상속받은 필드값 저장하는 setter 생성가능한지 확인해 봅시다.
+        
         //접근 한정자 확인하기
 
         diamond.round = 3;
