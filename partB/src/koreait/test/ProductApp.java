@@ -12,10 +12,10 @@ public class ProductApp {
        
        // power 메소드 : Electronics 자식 클래스의 메소드
        //           현재 부모타입으로 참조되는 것을 자식타입으로 변경 (다운캐스팅)
-       Electronics tv = null;
+       
        //다운캐스팅은 타입체크 꼭
        if(cart[5] instanceof Electronics) {
-             tv = (Electronics) cart[5];
+        Electronics tv = (Electronics) cart[5];
              tv.setKwh(0.9);
              System.out.println(tv.power());
        } else

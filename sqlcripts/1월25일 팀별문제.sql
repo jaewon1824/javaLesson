@@ -86,12 +86,13 @@ Join의 조건확인대상은 구매한 목록을 확인해야 하므로, tbl_bu
 Where의 조건인 서브쿼리의 괄호 안에는 고객의 목록이 있는 테이블의 최대 나이를 찾아야
 하므로 tbl_custom을 넣는다.
 */
-SELECT tc.CUSTOM_ID, tc.name, tc.age
+SELECT tc.CUSTOM_ID, tc.name , sum("구매")
 FROM TBL_CUSTOM tc
 JOIN TBL_BUY tb ON CUSTOM_ID=tb.CUSTOMID
 WHERE tc.AGE =
-(SELECT MAX(age)
-FROM TBL_CUSTOM);
+(SELECT sum(QUANTITY)AS "구매"
+FROM TBL_CUSTOM)
+GROUP BY tc.CUSTOM_ID , tc.NAME ;
 
 --노희영
 --2021년 12월1일 부터 2022년 03월17일 사이에 가장 많이 산 사람의 이름 , 물건이름 , 수량 순으로 조회하시오

@@ -59,8 +59,8 @@ CREATE OR REPLACE PROCEDURE search_custom(   -- 프로시저 이름 설정
       c_id IN tbl_custom.CUSTOM_ID %TYPE      -- 매개변수(인자) IN 
 )
 IS 
-   vname tbl_custom.name %TYPE   -- 지정된 테이블의 컬럼과 동일형식의 변수
-   vage tbl_custom.age %TYPE
+   vname tbl_custom.name %TYPE;   -- 지정된 테이블의 컬럼과 동일형식의 변수
+   vage tbl_custom.age %TYPE;
 BEGIN 
    SELECT name,age 
       INTO vname , vage   
@@ -70,13 +70,64 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('고객나이 : ' || vage);
    EXCEPTION      -- 예외(오류)처리
    WHEN no_data_found THEN   
-      DBMS_OUTPUT.PUT_LINE('찾는 데이터가 없습니다.');   
+      DBMS_OUTPUT.PUT_LINE(CHR(10) || '찾는 데이터가 없습니다.');   
 END;
 
 －－　프로시저　실행
 BEGIN search_custom('mina012');
 END;
 
-exec search_custom('mina012');
+-- exec search_custom('mina012');	디비버에선 실행안됨
 
+
+-- 저장 프로시저 예제 2
+
+-- 구매 수량이 최대인 고객의 이름, 나이 출력하는 프로시저 : max_custom
+
+-- 일반적인 SQL은? 구매수량이 최대 => tbl_buy 테이블 , 고객의 이름, 나이>= tbl_custom
+SELECT NAME , AGE
+FROM TBL_CUSTOM tc
+WHERE tc.CUSTOM_ID = (
+	SELECT tb.CUSTOMID 
+	FROM TBL_BUY tb
+	WHERE QUANTITY = (
+		SELECT max(QUANTITY)
+		FROM TBL_BUY tb2 ));
+	
+-- 복습 : 프로시저는 SQL로 만든 프로그램 => 여러개의 DML로 구성이 됩니다.	PLSQL이라고 부릅니다.
+	
+-- 							    => 필요에 따라 조회결과를 저장하는 사용할 수 있다.
+
+CREATE OR REPLACE PROCEDURE max_custom(      -- 자바의 메소드 인자와 같은 개념
+   p_name OUT tbl_custom.NAME %TYPE,      -- 출력(리턴)값이 있다면 OUT 변수를 사용합니다.
+   p_age OUT tbl_custom.AGE %TYPE
+)
+IS
+   maxval number(5);
+   cid tbl_custom.custom_id %TYPE;
+BEGIN
+   SELECT max(quantity)      -- 구매 수량 최대값
+      INTO maxval          -- 조회 결과를 일반변수에 저장
+   FROM tbl_buy; 
+
+   SELECT customid
+      INTO cid            -- 조회 결과를 일반변수에 저장
+   FROM tbl_buy
+   WHERE quantity = maxval;
+
+   SELECT name,age 
+      INTO p_name , p_age      -- 출력매개변수에 저장
+   FROM "TBL_CUSTOM" tc 
+   WHERE CUSTOM_ID =cid;
+END;
+
+-- 프로시저 실행 : 출력 매개변수가 있는 프로시저
+DECLARE vname tbl_custom.name %TYPE;
+		vage tbl_custom.age %TYPE;
+	BEGIN 
+		max_custom(vname,vage);		-- 프로시저 실행 결과값을 vname, vage 변수에 저장합니다.
+		  DBMS_OUTPUT.PUT_LINE(CHR(10));		-- 줄바꿈
+		  DBMS_OUTPUT.PUT_LINE('=고객이름 : ' || vname);
+		  DBMS_OUTPUT.PUT_LINE('=고객나이 : ' || vage);
+END;
 
