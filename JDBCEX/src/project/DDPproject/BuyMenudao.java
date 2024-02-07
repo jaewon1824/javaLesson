@@ -1,4 +1,4 @@
-package project.dao;
+package project.DDPproject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import project.vo.BuyMenuVo;
-import project.vo.McustomBuyVo;
-import project.vo.MemberShipVo;
 
 public class BuyMenudao {
     public static final String URL = "jdbc:oracle:thin:@//localhost:1521/xe";

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        html{
+            /* 16px x 0.625 = 10px = 1rem => 너비와 높이 계산 편하게 하기 위함. */
+            font-size: 62.5%;
+        }
+        /* 모든 요소에 적용할 스타일 선택자는 (와일드카드 문자) */
+        *{
+            box-sizing: border-box;
+        }
+        body{ 
+            /* 글씨 크기 16px */
+            font-size: 1.6rem;
+            font-family: 'Roboto', 'NOTO sans kr';
+        }
+        div{
+            box-sizing: border-box;
+            border: 2px dotted green;
+            margin: 2rem;
+            width: 10rem;
+            height: 12rem;
+        }
+        .child{
+             width: 8rem;
+            height: 8rem;
+            margin: 1rem;
+            padding: 1rem;
+        }
+        .child_relative{
+            /* 현재 위치에서 좌표 이동할 수 있습니다. 좌표값은 top,left */
+            position: relative;
+            top: 2rem;
+            left: 2rem;
+            border: 1px solid brown;
+        }
+
+        .child_absolute{
+            /* 현재 위치에서 좌표 이동할 수 있습니다. 좌표값은 top,left 
+                top, left는 브라우저 화면 맨 왼쪽위가 0입니다. 
+                top은 세로, left는 가로 방향으로 값이 증가합니다.
+                스크롤하면 화면에서 없어집니다.
+                */
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            border: 1px solid rgb(75, 5, 60);
+        }
+
+        .child_fixed{           
+            /* 스크롤을 내려도 화면에 같은 위치에 고정되어 따라옵니다. */
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            border: 1px solid rgb(139, 88, 11);
+            background-color: violet;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>position</h3>
+    <p>웹문서 상에서 요소를 배치할 때 기존 흐름과 다르게 할 수 있는 속성이 있습니다.</p>
+    <div>
+        <div class="child">asdku asdku</div>
+        </div>
+        <!-- class 이름을 여러가지 나열해서 적용시킬 수 있습니다. -->
+        <div> 
+        <div class="child child_relative">abcd</div>
+        </div>
+        <div>
+        <div class="child_absolute">abcde</div>
+    </div>
+    <div>
+        <div class="child child_fixed"></div>
+    </div>
+</body>
+</html>
