@@ -1,4 +1,4 @@
-package project.dao;
+package project.DDPproject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import project.vo.MenuVo;
 
 public class Menudao {
     public static final String URL = "jdbc:oracle:thin:@//localhost:1521/xe";

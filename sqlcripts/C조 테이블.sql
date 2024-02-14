@@ -68,3 +68,4 @@ INSERT INTO TBL_BUY_MENU VALUES (burger_seq.nextval, 'lce001', 'QUAR4', 1, sysda
 INSERT INTO TBL_BUY_MENU VALUES (burger_seq.nextval, 'jir001', 'CH40', 1, sysdate);
 INSERT INTO TBL_BUY_MENU VALUES (burger_seq.nextval, 'jir001', 'TOMA2', 1, sysdate);
 
+

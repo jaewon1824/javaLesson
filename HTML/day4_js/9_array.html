@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9_array</title>
+</head>
+<body>
+    <h3>자바스크립트의 배열</h3>
+    <ul>
+        <li>자바와의 차이점은 배열의 크기가 동적입니다.</li>
+        <li>인덱스 0부터 시작하고, 배열 요소 접근은 배열이름[인덱스]</li>
+        <li>주요 특징은 메소드가 많습니다.
+            : push(), pop() ....등등
+        </li>
+    </ul>
+    <pre style="font-size: 1rem; font-family: inherit;">   
+        <!-- pre 태그는 코드 출력할 때, 보이는 그대로 출력하는 용도
+                엔터를 줄바꿈 할 목적으로 사용합니다. 스타일이 바뀝니다. body와 같도록 하려면 style 설정 필요합니다.
+            -->
+    <script>
+        // document.write 또는 writeln 메소드 : 웹문서에 문자열 출력 태그기능 반영가능
+        const names = []        //내용이 없는 배열 선언
+        //names = ['a','b']       //오류 : const 입니다.
+        names.push('사나')          // 한개씩 
+        names.push('쯔위')
+        names.push(100)             // 동일한 배열에 문자열과 number 저장 가능합니다.
+        document.write('<h3>names 배열요소</h3>')
+        document.writeln("names = ", names)     //ln은 엔터.    html에서는 줄바꿈 안합니다.
+        names.pop()                             //마지막 인덱스 요소를 제거
+        document.writeln("pop 후 names = ", names)
+        names.push('모모')
+        document.writeln("sort 전 names = ", names)
+        names.sort()
+        document.writeln("sort 후 names = ", names)
+        names.reverse()
+        document.writeln("reverse 후 names = ", names)
+        names.push('aaa')
+        names.push('bbb')
+        names.push('ccc')
+        names.push('ddd')
+        //배열 요소의 삭제 - 위치와 개수를 지정하기
+        document.writeln("splice 하기 전 names = ", names)
+        names.splice(3,4)
+        document.writeln("splice 후 names = ", names)
+        // 이외에도 배열을 조작하는 많은 메소드가 있습니다. w3schools 참고해서 사용합시다.
+        //          지금까지 메소드는 names 배열 요소를 변경합니다.
+        document.writeln('리턴이 있는 메소드입니다. 지정된 기호로 배열요소 연결')
+        document.writeln(names.join('*'))   //문자열 리턴
+        document.writeln('배열의 크기를 저장하는 속성')
+        document.writeln('names 크기 =', names.length)
+        // 배열에서 요소 위치 찾기  indexOf
+        document.writeln('모모의 위치')
+        document.writeln(names.indexOf('모모'))
+        document.writeln('배열에 모모와 나연이 있는지')     //includes  따옴표 종류가 같다면 \를 넣어주거나 ""와 ''로 구분해줘야한다.
+        document.writeln('names.includes(\'모모\') = ', names.includes('모모'))
+        document.writeln('names.includes(\'나연\') = ', names.includes('나연'))
+
+        document.writeln('<h4>for문으로 배열요소 출력하기</h4>')
+        for(let i=0; i<names.length; i++){
+            document.writeln(i,'=',names[i])
+        }
+
+        //각자 조사하기 : 자바스크립트 for에 추가된 형식
+        //              for(.... in 배열) : 배열의 속성을 반복자가 순회
+        //              for (...... of 배열 또는 컬렉션) : 배열 요소를 반복자가 순회
+        document.writeln('<h4>for .. of</h4>')
+        //자바스크립트는 템플릿 리터럴(멀티라인,표현식) 기능이 있습니다. `` (백틱) 기호 사용
+        
+        const temp = `첫번째 줄
+        두번째 줄
+        세번째 줄`
+        console.log(temp)
+        document.writeln(temp)
+
+        for(const item of names){
+            //예시 : 출력 [배열값]
+            //document.writeln('[' + item + ']')      //배열과 컬렉션 각각 실행 결과가 다릅니다.
+            document.writeln(`[${item}]`)   //백틱 ``
+            // 변수 또는 수식 표현식을 ${} 기호에 표시
+        }
+
+        document.writeln('<h4>for .. in</h4>')
+        for(const item in names){
+            document.writeln(item)      // 지금 예제에서는 index 값 속성만 출력됩니다.
+        }
+
+        //foreach 메소드가 더 많이 쓰입니다. - 메소드의 인자가 함수입니다. (콜백함수)
+        //                      - names 배열 요소를 순서대로 하나씩 콜백함수 실행시킵니다.
+        document.write('<hr>')
+        
+    </script>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_dom.schedule</title>
+    <style>
+        table{ width: 800px;}
+        /* 테이블 크기 800픽셀에 대한 백분율로 너비를 설정합니다. */
+        th { width: 13%; background-color: tomato; color:white;}
+        td { width: 10%;}
+        th,td { border: 1px solid tomato; padding: 7px 12px; text-align: center;}
+    </style>
+</head>
+<body>
+    <h3>오늘의 스케쥴</h3>
+    <!-- 자바스크립트 배열에 저장된 값으로 시간표 만들어 봅니다. -->
+    <table>
+        <tr id="time">
+            
+            
+        </tr>
+        <tr id="todo">
+
+        </tr>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>TIME</th>
+                <th>TODO</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    <script>
+        const time = ['09:00', '11:00', '12:30', '14:00', '16:45']
+        const todo = ['수업', '과제', '점심식사', '주간회의', '자료조사']
+
+        function makeVerticalTable() {
+        const tbody = document.getElementById('tbody');
+
+        for (let i = 0; i < time.length; i++) {
+        const row = document.createElement('tr');
+
+        const times = document.createElement('td');
+        times.innerHTML = time[i]
+        row.appendChild(times);
+
+        const todos = document.createElement('td');
+        todos.innerHTML = todo[i]
+        row.appendChild(todos);
+
+        tbody.appendChild(row);  
+    }
+}
+
+makeVerticalTable();
+
+        function makeTable(){
+            //dom 메소드 createElement, appendChild 이용해서 완성하세요.
+            //첫번째 행 제목 th 요소 생성해서 append
+            const timeRow = document.getElementById('time')
+            const todoRow = document.getElementById('todo')
+            const Ti = document.createElement('th')
+            Ti.innerHTML = 'TIME'
+            timeRow.appendChild(Ti)
+            time.forEach((value) => {
+                    //td 요소 생성해서 append
+                const newtm = document.createElement("td")
+                newtm.innerHTML = value
+                timeRow.appendChild(newtm)
+            })
+            //두번째 행 제목 th 요소 생성해서 append
+            const To = document.createElement('th')
+            To.innerHTML = 'TODO'
+            todoRow.appendChild(To)
+            
+            todo.forEach((value)=>{
+
+                const newtd = document.createElement("td")
+                newtd.innerHTML = value
+                todoRow.appendChild(newtd)
+            })
+        }
+        makeTable()
+        
+        
+    </script>
+</body>
+</html>

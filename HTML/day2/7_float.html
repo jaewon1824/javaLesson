@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7_float</title>
+    <style>
+        /* 5_position.html 예제는 부모 div가 크기가 있었습니다.
+           이 예제에서는 부모가 크기가 없습니다.(너비는 100% 높이는 0)
+           div 안에 div 자식있을 때, 자식 크기만큼 부모가 커지지 않습니다.
+           그래서 자식 요소만큼 영역(높이)을 설정하려면 overflow: hidden;
+           */
+           /* 클래스 이름이 first, second 인 요소에 스타일 적용 */
+        .first , .second{
+            background-color: beige;
+            /* 블록요소안에 블록요소 포함할 때 많이 씁니다 */
+            overflow: hidden;
+        }
+    /* 선택자 기호 > : 자식 요소    .first 클래스이름 요소의 자식 태그 div */
+    /* float 속성은 block 요소의 배치를 인라인 요소와 같이 같은 라인에 배치합니다 */
+    .first > div {
+         float: left;
+         box-sizing: border-box;
+         width: 15rem;
+         height: 15rem;
+         border: 2px dashed brown;
+         margin: 2rem;
+    }
+    .second > div {
+         float: right;
+         box-sizing: border-box;
+         width: 15rem;
+         height: 15rem;
+         border: 2px dashed green;
+         margin: 2rem;
+    }
+    </style>
+</head>
+<body>
+    <div class="first">
+    <div>I</div>
+    <div>am</div>
+    <div>....??</div>
+    <div>안녕</div>
+    <div>Hi Hello~</div>
+    </div>
+    <div class="second">
+    <div>I</div>
+    <div>am</div>
+    <div>....??</div>
+    <div>안녕</div>
+    <div>Hi Hello~</div>
+    </div>
+</body>
+</html>

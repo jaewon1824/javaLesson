@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_text</title>
+</head>
+<body>
+    <!-- form 은 사용자 입력 양식을 만듭니다. 모든 입력 요소의 주요 속성은
+        사용자가 입력한 값을 구분하기 위해 name 속성
+        사용자가 입력한 값 유형은 type 속성 (화면에 표시되는 방법)
+        사용자가 입력한 값은 value 속성 기본값을 아래와 같이 설정할 수 있습니다.
+        서버 전송되는 url에 표시는 ?속성이름 = 값 형식입니다.
+    -->
+    <form action="success.html">
+        <input type="text" name="search" value="item">
+        <!-- button 태그가 form 안에 있으면 type이 생략되면 submit(제출하다.)
+            은 서버로 데이터를 보내는 동작입니다. -->
+        <button>전송</button>
+        <!-- type이 button 일 때에는 자바스크립트 명령을 실행합니다. -->
+        <button type="button">검색</button>
+        <!-- 오래된 형식 -->
+        <input type="submit" value="테스트">
+    </form>
+    <hr>
+    <button>form 태그 밖에 있는 버튼</button>
+    <!-- button 은 1) form 태그 안 또는 밖에 쓰였을 때   2) type 2가지 동작차이 -->
+</body>
+<!-- 
+    실행 결과 :
+    입력요소에 아무 문자열 입력 후 전송 버튼 클릭하면
+    success.html로 페이지가 이동합니다.
+
+    실행결과 url : http://127.0.0.1:3000/day3_form/success.html?search=abcd
+
+    입력문자열이 한글일 경우 (url에서 utf-8인코딩된 값으로 전달됩니다. ex) 가나다라 (%EA 1바이트 16진수 값))
+    http://127.0.0.1:3000/day3_form/success.html?search=%EA%B0%80%EB%82%98%EB%8B%A4%EB%9D%BC
+
+    action 속성값은 데이터를 전달받을 url(백엔드 주소)
+    html 파일은 정적페이지로 데이터를 처리하는 기능이 없습니다.
+    웹애플리케이션 서버단에서 데이터를 처리할 수 있는 jsp로 바뀌어야 합니다.
+ -->
+</html>

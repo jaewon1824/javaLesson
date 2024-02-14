@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6_anchor</title>
+</head>
+<body>
+    <h3>A (anchor) 태그</h3>
+    <p>HTML의 약자는 HyperText Markup Language 입니다. 
+        hypertext는 웹페이지를 넘나들며 화면을 바꿀 수 있는 방식으로 동작한다는 의미입니다.
+        a 태그는 href 속성값을 설정하여 이동할 웹페이지를 지정하고 화면을 바꿉니다.
+    </p>
+    <ul>
+        <li>
+            <a href="https://www.google.com" target>구글</a>
+        </li>
+        <li>
+            <a href="https://www.naver.com" target>네이버</a>
+        </li>
+        <li>
+            <a href="http://127.0.0.1:3000/day1/5_position.html">5_position.html(전체주소)</a>
+        </li>
+        <li>
+            <!-- 위의 전체 주소 http://127.0.0.1:3000/day1/5_position.html 는
+                 현재 페이지의 주소 http://127.0.0.1:3000/day1/6_anchor.html 와
+                 같은 서버와 포트 주소이므로 이 부분은 생략하고 표기합니다.
+            -->
+            <a href="5_position.html">5_position.html(파일명)</a> 
+        </li>
+        <li>
+            <!-- 현재 폴더 day1의 부모로 가기
+                 그리고 부모의 자식 test 폴더로 가기
+                 anchorTest.html 파일 요청하기 -->
+
+                 <!-- 현재 페이지의 주소 http://127.0.0.1:3000/day1/6_anchor.html 에서
+                 http://127.0.0.1:3000/test/anchorTest.html (절대주소)로 이동하기
+                 ../test/anchorTest.html 는 현재 위치 기준의 상대주소
+                => test는 day1의 형제폴더 -->
+                </li>
+            <a href="../test/anchorTest.html">anchorTest.html Go!!(파일명)</a>
+        </li>
+        <li>
+             <!-- 절대 주소  http://127.0.0.1:3000/anchorTest2.html
+                => 부모 폴더로 이동
+            -->
+            <a href="../anchorTest2.html">anchorTest2.html Go!!(파일명)</a>
+        </li>
+        <li>
+            <!-- 절대 주소  http://127.0.0.1:3000/day1/anchor/anchorTest3.html
+                로 이동합니다. 상대주소로 href 설정하세요.
+                그리고 해당폴더와 파일 만들어서 테스트 해보세요.
+                부모폴더는 ../ ,  현재 폴더는 ./  ,  자식폴더는 ./ AND 폴더명/파일명
+            -->
+            <!-- => 자식 폴더 anchor 로 이동 -->
+            <a href="./anchor/anchorTest3.html">anchorTest.html3 Go!!</a>
+            <br>
+            <a href="anchor/anchorTest3.html">anchorTest.html3 Go!!</a>
+        </li>
+        
+       
+    </ul>
+</body>
+</html>

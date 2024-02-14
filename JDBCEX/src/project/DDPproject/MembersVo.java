@@ -1,4 +1,4 @@
-package project.vo;
+package project.DDPproject;
 
 public class MembersVo {
     private String code;

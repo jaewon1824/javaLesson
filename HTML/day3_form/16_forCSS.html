@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_forCSS</title>
+</head>
+<!-- 화면구현 능력단위 평가 : 회원가입 페이지를 클론 코딩으로 작성 또는 직접 스타일 작성해서 완성합니다.
+                            제목, 입력 항목은 공통된것으로 전달할 예정입니다.
+                            클론 코딩은 참조 페이지 캡처 및 링크를 답안에 작성해주세요.
+ -->
+<body>
+    <!-- CSS 를 적용하기 위해 ul 태그를 사용해 봅니다.
+    -->
+    <form action="success.html">
+        <ul>
+            <li><label for="userid">아이디</label></li>
+            <li><input type="text" name="uesrid" placeholder="아이디를 입력하세요." id="userid"></li>
+            <li><label for="pwd">패스워드</label></li>
+            <li><input type="password" name="password" placeholder="패스워드를 입력하세요." id="pwd"></li>
+            <li>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="favorite" value="의류" id="a1">
+                        <label for="a1">의류</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="favorite" value="스포츠용품" id="a2">
+                        <label for="a2">스포츠용품</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="favorite" value="식료품" id="a3">
+                        <label for="a3">식료품</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="favorite" value="잡화" id="a4">
+                        <label for="a4">잡화</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="favorite" value="전자제품" id="a5">
+                        <label for="a5">전자제품</label>
+                    </li>
+                </ul>
+            </li>
+            <li><button>주문</button></li>
+        </ul>
+    </form>
+</body>
+<!-- 결론 : 사용자 선택이 필수일때는 radio
+                        필수가 아니거나 여러개 선택 가능한 것은 checkbox
+-->
+</html>
