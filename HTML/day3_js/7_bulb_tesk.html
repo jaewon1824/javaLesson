@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7_bulb_tesk</title>
+</head>
+<body>
+        <h3>현재 상태 :
+        <span id="sw"></span>
+        </h3>
+        <img src="" alt="" id="bulb" style="cursor: pointer;" onclick="bulbOnOff()" title="전구를 클릭하면 on/off 됩니다.">      
+        <br>
+        <button onclick="bulbOn()" id="on">불을 켜주세요.</button>
+        <button onclick="bulbOff()" id="off">불을 꺼주세요.</button>
+
+    <script>
+        const bulb = document.getElementById('bulb')
+        const on = document.getElementById('on')
+        const off = document.getElementById('off')
+        const sw = document.getElementById('sw')
+        off.disabled = true
+        
+        function bulbOnOff(){           //이미지 클릭해서 toggle 동작하기
+            if (sw.innerHTML == 'ON')      //현재 ON이면
+                bulbOff()           //클릭했을 때 OFF하기
+            else
+                bulbOn()
+        }
+
+        function bulbOn(){
+            bulb.src="../images/KakaoTalk_20240213_160833779.gif"
+            on.disabled = true          
+            off.disabled = false 
+            
+            let color = sw.style.color      
+            sw.style.color = 'green'
+            sw.innerHTML = 'ON'         
+                   
+        }
+
+        function bulbOff(){
+            bulb.src="../images/KakaoTalk_20240213_160833991.gif"
+            off.disabled = true
+            on.disabled = false
+
+            let color = sw.style.color      
+            sw.style.color = 'red'         
+            sw.innerHTML = 'OFF'
+        }
+        //초기화는 원하는 대로
+        bulbOff()
+    </script>
+</body>
+</html>

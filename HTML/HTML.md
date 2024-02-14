@@ -150,7 +150,7 @@
     +   높이는 내용이 아무것도 없으면 0, 있으면 contents (내용)에 따라       자동으로 설정됩니다.
     +   태그에 따라 기본값이 다릅니다. (사용자 에이전트 스타일-브라우저 	기본값) user agent style
 	+ 	스타일(css)에서 너비와 높이를 설정할 수 있습니다.
-	+ 	div, h1~h6, ul, ol, li, table, form, hr
+	+ 	html, body, div, h1~h6, ul, ol, li, table, form, hr
 	+ 	레이아웃 시맨틱 태그들 (header,main,nav,footer...등등)
 	+ 	블록요소를 inline-block 요소로 바꿀 수 있습니다. (display 스타일 속성)
 	+ 

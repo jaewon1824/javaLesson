@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_radio</title>
+</head>
+<body>
+    <!-- 배송지를 선택하는 요소이다. - 라디오버튼  -->
+    <form action="success.html">
+        <!-- radio 특징 :
+             여러개 중 하나 선택하기 위해 name 속성값을 
+            모두 같게하여 그룹화합니다. 반드시 하나를 선택하도록 합니다.
+            value는 생략하지 않고 선택에 대한 값을 지정합니다.
+        -->
+        <input type="radio" name="location" value="seoul">서울
+        <input type="radio" name="location" value="gg">경기
+        <input type="radio" name="location" value="ic" checked>인천
+        <input type="radio" name="location" value="cc">춘천
+        <input type="radio" name="location" value="dj">대전
+        <button>주문</button>
+    </form>
+</body>
+</html>

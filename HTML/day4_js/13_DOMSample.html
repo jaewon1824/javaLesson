@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_DOM</title>
+    
+</head>
+<body>
+ <h4>DOM : Document Object Model</h4>
+ <h3>Element Object 의 프로퍼티</h3>
+ <hr>
+ <h4>요소 추가 연습 테이블</h4>
+ <table>
+    <tbody>
+        <tr><td>사나</td></tr>
+        <tr><td>나연</td></tr>
+        <tr><td>은하</td></tr>
+        <tr><td>신비</td></tr>
+    </tbody>
+</table>
+<hr>
+ <div id="kpop" style="padding: 10px;width:400px;margin-left: 220px;background-color: antiquewhite;" >
+	    <h4>KPOP</h4>
+        <ul>
+            <li>트와이스</li>
+            <li>에스파</li>
+            <li>비비즈</li>
+        </ul>
+        <ul>
+            <li>사나</li>
+            <li>나연</li>
+            <li>은하</li>
+            <li>신비</li>
+        </ul>
+</div>
+<hr>
+<pre style="padding: 10px;width:70%;margin: auto;">
+	const kpop = document.getElementById('kpop')
+	console.log(kpop)
+    	console.log('1.childNodes')
+        console.log(kpop.childNodes)    
+        //h4,ul,ul, 앞뒤에 있는 엔터가 text 자식 노드
+        console.log('2.children')
+        console.log(kpop.children)      //1번결과에서 text(엔터) 제외
+        console.log('3.첫번째 자식')
+        console.log(kpop.firstChild)
+        console.log('4.첫번째 자식요소')
+        console.log(kpop.firstElementChild)
+        console.log('5.마지막 자식')
+        console.log(kpop.lastChild)
+        console.log('6.마지막자식요소')
+        console.log(kpop.lastElementChild)
+        
+        const child1 = kpop.lastElementChild
+        console.log('7.마지막 자식의 컨텐츠')
+        console.log(child1.innerHTML)
+        console.log('8.첫번째 자식요소의 컨텐츠')
+		console.log(kpop.firstElementChild.innerHTML)
+        console.log('9.첫번째 자식의 형제 요소')
+        console.log(kpop.firstElementChild.nextElementSibling.innerHTML)
+        console.log('10.마지막 자식의 형제 요소')
+        console.log(kpop.lastElementChild.nextElementSibling)  //다음형제
+        console.log(kpop.lastElementChild.previousElementSibling)  //앞에 나온 형제
+</pre>
+<script type="text/javascript">
+    // DOM : 문서객체모델. 웹문서는 태그로 구성이 됩니다. 그 태그들은 서로 부모자식 관계가 있으며 이것은 tree 구조로 설명될 수 있습니다.
+console.log('1.childNodes')
+console.log(kpop.childNodes)
+console.log('2.children')
+console.log(kpop.children)
+console.log('3.첫번째 자식')
+console.log(kpop.firstChild)
+console.log('4.첫번째 자식요소')
+console.log(kpop.firstElementChild)
+console.log('5.마지막 자식')
+console.log(kpop.lastChild)
+console.log('6.마지막자식요소')
+console.log(kpop.lastElementChild)
+const child1 = kpop.lastElementChild
+console.log('7.마지막 자식요소의 컨텐츠')
+console.log(child1.innerHTML)
+console.log(kpop.lastElementChild.innerHTML)
+console.log('8.첫번째 자식요소의 컨텐츠')
+console.log(kpop.firstElementChild.innerHTML)
+console.log('9.첫번째 자식의 형제 요소')
+console.log(kpop.firstElementChild.nextElementSibling.innerHTML)
+console.log('10.마지막 자식의 형제 요소')
+console.log(kpop.lastElementChild.nextElementSibling)  //다음형제
+console.log(kpop.lastElementChild.previousElementSibling)  //앞에 나온 형제
+
+//메소드 예시 : 이것을 이용해서 
+//ArraySample.html(방법2) 과 ObjectArraySample.html 의 시간표를 추가를 할수 있습니다
+
+</script>
+ </body>
+</html>

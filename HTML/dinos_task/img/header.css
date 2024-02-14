@@ -1,0 +1,186 @@
+/* 글꼴 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+/* 예시 사이트의 초기화 작업 */
+html, body, div, span, ul, li, h2, h3, h4, h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html{
+    /* 1rem = 10px */
+    font-size: 62.5%;
+}
+
+*{
+    /* 너비와 높이 크기에 padding과 border 굵기 포함하여 계산합니다. */
+    box-sizing: border-box;
+}
+:root {
+    --navy-main: #071d3d;
+    --navy-bold: #04152b;
+    --brown: #c7a079;
+    --brown-light: #f4ece4;
+    --red: #ee2529;
+    --blue: #5b8ebd;
+    --blue-light: #eef3f8;
+    --blue-bold: #1e457c;
+    --gray-btn: #747474;
+    --gray-text: #747474;
+    --gray-text-light: #dbdbdb;
+    --gray-border: #e4e4e4;
+}
+:root{
+    --swiper-theme-color: #007aff;
+}
+:root{
+    --swiper-navigation-size: 44px;
+}
+html, body {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', 'Noto Sans KR';
+    font-weight: 400;
+    letter-spacing: -.02rem;
+    color: #222;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: 1;
+}
+div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.desktop-only{
+    display: inherit;
+}
+.sub-wrap{
+    width: 100%;
+    background-color: #04152b;
+}
+.sub-wrap .sub-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 128rem;
+    height: 3.6rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+.sub-wrap .sub-con .site-tab {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.sub-wrap .sub-con .site-tab > li {
+    height: 100%;
+    line-height: 3.6rem;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    display: block;
+    list-style-type: disc;   
+}
+ul{
+    /* li 태그앞에 붙이는 기호 없음. */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sub-wrap .sub-con .user-tab {
+    display: flex;
+    align-items: center;
+}
+
+.sub-wrap .sub-con .user-tab > li + li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0.1rem;
+    height: 1rem;
+    background-color: rgba(255,255,255,0.5);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.sub-wrap .sub-con .user-tab > li {
+    position: relative;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+}
+.nav-wrap {
+    width: 100%;
+    background-color: #071d3d;
+}
+.nav-wrap .nav-con {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 128rem;
+    height: 9.4rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
+.nav-wrap .nav-con .gnb-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.nav-wrap .nav-con .gnb-wrap > li {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 6rem;
+    cursor: pointer;
+}
+.nav-wrap .nav-con > img {
+    height: 4rem;
+}
+img {
+    border-style: none;
+}
+/* a 태그는 밑줄이 기본 스타일 */
+a{
+    /* 밑줄 제거 */
+    text-decoration: none;
+}
+a:visited{
+    /* a태그 url을 방문하면 글꼴 색상이 변경됩니다. */
+    color: #fff;
+    text-decoration: none;
+}

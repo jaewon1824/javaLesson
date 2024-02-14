@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_forEach</title>
+</head>
+<body>
+    <h3>자바스크립트의 배열 forEach</h3>
+    <ul>
+        <li>for문 동작을 하는 메소드입니다.</li>
+        <li>메소드 인자는 함수 입니다. : 콜백함수</li>
+        <li>콜백함수의 인자는 순서 배열요소, 인덱스, 배열 입니다.</li>
+        <li>콜백함수의 인자는 필요에 따라 1개 또는 2개만 사용할 수도 있습니다.</li>
+        <li>콜백함수로 화살표 함수 형식을 많이 사용합니다. (숙지 필수)</li>
+    </ul>
+    <pre style="font-size: 1rem; font-family: inherit;">   
+        <!-- pre 태그는 코드 출력할 때, 보이는 그대로 출력하는 용도
+                엔터를 줄바꿈 할 목적으로 사용합니다. 스타일이 바뀝니다. body와 같도록 하려면 style 설정 필요합니다.
+            -->
+    <script>
+        // document.write 또는 writeln 메소드 : 웹문서에 문자열 출력 태그기능 반영가능
+        const names = []        //내용이 없는 배열 선언
+        names.push('사나')          // 한개씩 
+        names.push('쯔위')
+        names.push('모모')
+        names.push('다현')
+        names.push('나연')
+        names.sort()
+        
+        
+        names.forEach(function(ele,i,arr){
+            //forEach 메소드 콜백함수의 인자는 순서가 정해져 있습니다. item -> index -> array 
+            // 변수명은 자유롭게 가능
+            document.writeln("item = ", ele)
+            document.writeln("index = ", i)
+            document.writeln("array = ", arr)
+            document.write('<hr style="border:0.2px dashed gray">')
+        })
+
+        names.forEach(function(ele,i){
+            //forEach 메소드 콜백함수의 인자는 순서가 정해져 있습니다. 
+            // 필요없다면 선언하지 않아도 됩니다.   다만 앞순서를 제외하고는 사용못함.
+            document.writeln("item = ", ele)
+            document.writeln("index = ", i)
+            document.write('<hr style="border:0.2px dashed green">')
+        })
+        
+        names.forEach(function(ele){
+            //forEach 메소드 콜백함수의 인자는 순서가 정해져 있습니다.
+            document.writeln("item = ", ele)
+            document.write('<hr style="border:0.2px dashed blue">')
+        })
+
+        names.forEach((ele) =>{
+            //forEach 메소드 콜백함수의 인자는 순서가 정해져 있습니다.
+            // 화살표 함수 사용
+            document.writeln("item = ", ele)
+            document.write('<hr style="border:0.2px dashed red">')
+        })
+        // 화살표 함수를 변수로 선언. 함수 실행코드가 한줄일 때는 {} 생략 가능
+        const printItem = (item) => document.writeln("item = ", item)
+        names.forEach(printItem)
+
+
+    </script>
+    </pre>
+</body>
+</html>
